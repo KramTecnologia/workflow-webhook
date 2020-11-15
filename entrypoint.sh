@@ -20,12 +20,12 @@ urldecode() {
 set -e
 
 if [ -z "$webhook_url" ]; then
-    echo "No webhook_url configured"
+    echo "No webhook_url configured!"
     exit 1
 fi
 
 if [ -z "$webhook_secret" ]; then
-    echo "No webhook_secret configured"
+    echo "No webhook_secret configured!"
     exit 1
 fi
 
