@@ -53,7 +53,7 @@ else
         RAW_FILE_DATA=`cat $GITHUB_EVENT_PATH`
         WEBHOOK_DATA=$(echo -n "$RAW_FILE_DATA" | jq -c '')
     else
-        WEBHOOK_DATA="{\"event\":\"$GITHUB_EVENT_NAME\",\"repository\":\"$GITHUB_REPOSITORY\",\"commit\":\"$GITHUB_SHA\",\"ref\":\"$GITHUB_REF\",\"head\":\"$GITHUB_HEAD_REF\",\"workflow\":\"$GITHUB_WORKFLOW\"}"
+        WEBHOOK_DATA="{\"event\":\"$GITHUB_EVENT_NAME\", \"\ref_type\": \"tag\", \"repository\":\"$GITHUB_REPOSITORY\",\"commit\":\"$GITHUB_SHA\",\"ref\":\"$GITHUB_REF\",\"head\":\"$GITHUB_HEAD_REF\",\"workflow\":\"$GITHUB_WORKFLOW\"}"
     fi
     
     if [ -n "$data" ]; then
